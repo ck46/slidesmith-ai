@@ -4,7 +4,7 @@ Backend service for AI-powered presentation generation with real-time streaming.
 
 ## Features
 
-- 🤖 AI-powered slide generation using GPT-4o or Claude
+- 🤖 AI-powered slide generation using GPT-5.1 or Claude 4.5
 - 🔍 Web search integration (Tavily/Exa)
 - 🖼️ Automatic image search and retrieval (Pexels/Picsum)
 - ⚡ Real-time WebSocket streaming
@@ -14,7 +14,7 @@ Backend service for AI-powered presentation generation with real-time streaming.
 
 ### Required
 - **OpenAI API Key**: Get from [OpenAI Platform](https://platform.openai.com/api-keys)
-  - Used for GPT-4o slide generation
+  - Used for GPT-5.1 slide generation
 
 ### Recommended
 - **Tavily API Key**: Get from [Tavily](https://tavily.com)
@@ -28,7 +28,7 @@ Backend service for AI-powered presentation generation with real-time streaming.
 
 ### Optional
 - **Anthropic API Key**: Get from [Anthropic Console](https://console.anthropic.com/)
-  - For Claude 3.5 Sonnet
+  - For Claude 4.5 Sonnet
 - **Exa API Key**: Get from [Exa.ai](https://exa.ai)
   - Alternative search engine
 
@@ -105,7 +105,7 @@ EXA_API_KEY=...
 
 # Configuration
 USE_PROVIDER=openai
-MODEL_NAME=gpt-4o
+MODEL_NAME=gpt-5.1
 FRONTEND_URL=http://localhost:5173
 ```
 

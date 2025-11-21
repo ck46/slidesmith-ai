@@ -4,7 +4,7 @@ An AI-powered presentation generator that creates professional slides with real-
 
 ## Features
 
-- 🤖 **AI-Powered Content Generation** - Uses OpenAI GPT-4 or Anthropic Claude
+- 🤖 **AI-Powered Content Generation** - Uses OpenAI GPT-5.1 or Anthropic Claude 4.5
 - 🔍 **Real-Time Web Research** - Integrates with Tavily and Exa for up-to-date information
 - 🖼️ **Image Search** - Automatically finds relevant images via Pexels API
 - ⚡ **Real-Time Streaming** - WebSocket-based streaming for live updates
@@ -62,7 +62,7 @@ PEXELS_API_KEY=your-pexels-key-here
 
 # LLM Configuration
 USE_PROVIDER=openai
-MODEL_NAME=gpt-4o
+MODEL_NAME=gpt-5.1
 
 # Frontend Configuration
 FRONTEND_URL=http://localhost:80
@@ -134,9 +134,9 @@ The frontend will run on `http://localhost:5173`
 ### Required (at least one)
 
 1. **OpenAI**: https://platform.openai.com/api-keys
-   - Recommended models: `gpt-4o`, `gpt-4-turbo`
+   - Recommended models: `gpt-5.1`, `gpt-5.1-mini`
 2. **Anthropic**: https://console.anthropic.com/
-   - Recommended models: `claude-3-5-sonnet-latest`
+   - Recommended models: `claude-4.5-sonnet`
 
 ### Optional (for enhanced features)
 
@@ -206,7 +206,7 @@ docker-compose down --rmi all
 | `EXA_API_KEY` | Exa search API key | No | - |
 | `PEXELS_API_KEY` | Pexels image API key | No | - |
 | `USE_PROVIDER` | LLM provider (`openai` or `anthropic`) | No | `openai` |
-| `MODEL_NAME` | Model name to use | No | `gpt-4o` |
+| `MODEL_NAME` | Model name to use | No | `gpt-5.1` |
 | `FRONTEND_URL` | Frontend URL for CORS | No | `http://localhost:5173` |
 
 *At least one LLM provider key is required
@@ -231,7 +231,7 @@ docker-compose down --rmi all
 ```env
 OPENAI_API_KEY=sk-prod-key-here
 USE_PROVIDER=openai
-MODEL_NAME=gpt-4o
+MODEL_NAME=gpt-5.1
 FRONTEND_URL=https://yourdomain.com
 VITE_BACKEND_WS_URL=wss://yourdomain.com/ws/generate
 ```

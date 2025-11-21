@@ -70,7 +70,7 @@ async def generate_slides_stream(
 async def generate_with_openai(prompt: str, model: str = None) -> AsyncGenerator[Dict[str, Any], None]:
     """Generate slides using OpenAI with function calling."""
     if not model:
-        model = os.getenv("MODEL_NAME", "gpt-4o")
+        model = os.getenv("MODEL_NAME", "gpt-5.1")
     
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
@@ -155,7 +155,7 @@ async def generate_with_openai(prompt: str, model: str = None) -> AsyncGenerator
 async def generate_with_anthropic(prompt: str, model: str = None) -> AsyncGenerator[Dict[str, Any], None]:
     """Generate slides using Anthropic Claude."""
     if not model:
-        model = os.getenv("MODEL_NAME", "claude-3-5-sonnet-latest")
+        model = os.getenv("MODEL_NAME", "claude-4.5-sonnet")
     
     # Similar implementation for Claude
     # For now, yield a placeholder
