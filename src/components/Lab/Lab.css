@@ -1,0 +1,147 @@
+/* Lab Component Styles */
+
+.message-bubble {
+    max-width: 85%;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    animation: fade-in 0.3s ease-out;
+}
+
+.message-bubble.user {
+    align-self: flex-end;
+    background-color: var(--ui-accent);
+    color: white;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.message-bubble.agent {
+    align-self: flex-start;
+    background-color: var(--ui-card-bg);
+    border: 1px solid var(--ui-border);
+    border-bottom-left-radius: 0.25rem;
+    color: var(--ui-text);
+}
+
+.action-card {
+    align-self: flex-start;
+    background-color: var(--ui-card-bg);
+    border: 1px solid var(--ui-border);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    max-width: 90%;
+    box-shadow: 0 2px 8px var(--ui-shadow);
+    animation: fade-in 0.3s ease-out;
+}
+
+.action-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--ui-accent);
+}
+
+.action-card-content {
+    font-size: 0.875rem;
+    color: var(--ui-text-muted);
+}
+
+.thinking-step {
+    animation: fade-in 0.5s ease-out;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: var(--ui-text-muted);
+}
+
+.input-container {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-end;
+}
+
+.input-field {
+    flex: 1;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--ui-border);
+    border-radius: 1rem;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    resize: none;
+    max-height: 120px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-field:focus {
+    border-color: var(--ui-accent);
+}
+
+.magic-button {
+    padding: 0.875rem 1.25rem;
+    background-color: var(--ui-accent);
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.magic-button:hover:not(:disabled) {
+    background-color: var(--ui-accent-hover);
+    animation: sparkle 0.6s ease-in-out;
+}
+
+.magic-button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.magic-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.empty-state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.empty-state-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--ui-text-muted);
+}
+
+.starter-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 320px;
+}
+
+.starter-chip {
+    padding: 0.75rem 1rem;
+    background-color: var(--ui-card-bg);
+    border: 1px solid var(--ui-border);
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+    text-align: left;
+}
+
+.starter-chip:hover {
+    border-color: var(--ui-accent);
+    background-color: rgba(79, 70, 229, 0.05);
+    transform: translateX(4px);
+}

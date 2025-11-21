@@ -1,0 +1,80 @@
+/* CSS Variables for Theming */
+
+:root {
+  /* UI Colors - For the application interface */
+  --ui-bg: #f9fafb; /* Slate-50 */
+  --ui-sidebar-bg: #ffffff;
+  --ui-accent: #4f46e5; /* Indigo-600 */
+  --ui-accent-hover: #4338ca; /* Indigo-700 */
+  --ui-text: #0f172a; /* Slate-900 */
+  --ui-text-muted: #64748b; /* Slate-500 */
+  --ui-border: #e2e8f0; /* Slate-200 */
+  --ui-card-bg: #ffffff;
+  --ui-shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Status Colors */
+  --status-ready: #10b981; /* Green */
+  --status-thinking: #f59e0b; /* Yellow */
+  --status-error: #ef4444; /* Red */
+  
+  /* Slide Theme Variables - Corporate (Default) */
+  --slide-bg: #ffffff;
+  --slide-text: #1e293b; /* Navy Blue */
+  --slide-heading: #0f172a;
+  --slide-accent: #4f46e5;
+  --slide-font-body: 'Roboto', 'Helvetica', sans-serif;
+  --slide-font-heading: 'Roboto', 'Helvetica', sans-serif;
+  --slide-border: #e2e8f0;
+}
+
+/* Cyber/Tech Theme */
+[data-theme="cyber"] {
+  --slide-bg: #0f172a; /* Dark Slate */
+  --slide-text: #e2e8f0;
+  --slide-heading: #f0fdf4;
+  --slide-accent: #22d3ee; /* Neon Blue */
+  --slide-font-body: 'JetBrains Mono', 'Inter', monospace;
+  --slide-font-heading: 'JetBrains Mono', 'Inter', monospace;
+  --slide-border: #334155;
+}
+
+/* Editorial Theme */
+[data-theme="editorial"] {
+  --slide-bg: #fefce8; /* Cream/Paper */
+  --slide-text: #374151; /* Charcoal */
+  --slide-heading: #1f2937;
+  --slide-accent: #92400e; /* Brown accent */
+  --slide-font-body: 'Georgia', serif;
+  --slide-font-heading: 'Playfair Display', serif;
+  --slide-border: #d1d5db;
+}
+
+/* Animations */
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}

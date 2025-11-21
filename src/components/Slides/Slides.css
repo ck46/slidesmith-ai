@@ -1,0 +1,209 @@
+/* Shared Slide Styles */
+
+.slide {
+    width: 100%;
+    height: 100%;
+    padding: 3rem 4rem;
+    display: flex;
+    font-family: var(--slide-font-body);
+    color: var(--slide-text);
+    position: relative;
+}
+
+.slide-title {
+    font-family: var(--slide-font-heading);
+    color: var(--slide-heading);
+    font-weight: 700;
+}
+
+/* Title Slide */
+.title-slide {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    z-index: 0;
+}
+
+.title-slide .slide-title,
+.title-slide .slide-subtitle {
+    position: relative;
+    z-index: 1;
+}
+
+.title-slide .slide-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.title-slide .slide-subtitle {
+    font-size: 1.75rem;
+    color: var(--slide-accent);
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Bullet Slide */
+.bullet-slide {
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bullet-slide .slide-title {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.bullet-item {
+    font-size: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.bullet-item::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--slide-accent);
+    font-weight: bold;
+}
+
+/* Split Content Slide */
+.split-slide {
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.split-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.split-slide .slide-title {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.split-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+.split-media {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--slide-accent) 0%, rgba(124, 58, 237, 0.7) 100%);
+    border-radius: 0.75rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* Big Data Slide */
+.bigdata-slide {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.bigdata-number {
+    font-size: 10rem;
+    font-weight: 900;
+    color: var(--slide-accent);
+    line-height: 1;
+    font-family: var(--slide-font-heading);
+}
+
+.bigdata-caption {
+    font-size: 2rem;
+    color: var(--slide-text);
+    font-weight: 500;
+}
+
+/* Quote Slide */
+.quote-slide {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 2rem;
+    font-family: var(--slide-font-heading);
+}
+
+.quote-text {
+    font-size: 2.5rem;
+    font-style: italic;
+    line-height: 1.5;
+    max-width: 80%;
+    position: relative;
+    color: var(--slide-heading);
+}
+
+.quote-text::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--slide-accent);
+    opacity: 0.3;
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+}
+
+.quote-author {
+    font-size: 1.5rem;
+    color: var(--slide-text);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.quote-author::before {
+    content: '— ';
+}
+
+/* Editable content */
+[contenteditable="true"] {
+    outline: 2px dashed transparent;
+    transition: outline 0.2s;
+    cursor: text;
+}
+
+[contenteditable="true"]:hover {
+    outline-color: var(--slide-accent);
+    outline-offset: 4px;
+}
+
+[contenteditable="true"]:focus {
+    outline-style: solid;
+    outline-offset: 4px;
+}

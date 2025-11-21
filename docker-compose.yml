@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: slidesmith-backend
+    ports:
+      - "8001:8001"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - TAVILY_API_KEY=${TAVILY_API_KEY}
+      - EXA_API_KEY=${EXA_API_KEY}
+      - PEXELS_API_KEY=${PEXELS_API_KEY}
+      - USE_PROVIDER=${USE_PROVIDER:-openai}
+      - MODEL_NAME=${MODEL_NAME:-gpt-4o}
+      - FRONTEND_URL=${FRONTEND_URL:-http://localhost:80}
+    env_file:
+      - .env
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - slidesmith-network
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_BACKEND_WS_URL=${VITE_BACKEND_WS_URL:-ws://localhost:8001/ws/generate}
+    container_name: slidesmith-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - slidesmith-network
+
+networks:
+  slidesmith-network:
+    driver: bridge
+
